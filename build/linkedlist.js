@@ -1,14 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LinkedList = void 0;
+const sorter_1 = require("./sorter");
 class Node {
     constructor(data) {
         this.data = data;
         this.next = null;
     }
 }
-class LinkedList {
+class LinkedList extends sorter_1.Sorter {
     constructor() {
+        super(...arguments);
         this.head = null;
     }
     addNode(data) {
@@ -68,10 +70,11 @@ class LinkedList {
             return;
         }
         let node = this.head;
-        while (node.next) {
+        while (node) {
             console.log(node.data);
             node = node.next;
         }
+        return;
     }
 }
 exports.LinkedList = LinkedList;
